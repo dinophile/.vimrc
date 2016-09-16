@@ -26,6 +26,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
+Plugin 'mileszs/ack.vim'
 
 
 
@@ -34,10 +35,11 @@ call vundle#end()
 filetype plugin indent on
 colorscheme monokai
 
+
 " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
 if executable('ag')
 "  Use Ag over Grep
-   set grepprg=ag\ --nogroup\ --nocolor
+   let g:ackprg = 'ag --vimgrep --nogroup --nocolor'
 " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
    let g:ctrlp_user_command = 'ag -Q -l --nocolor --hidden -g "" %s'
   " ag is fast enough that CtrlP doesn't need to cache
